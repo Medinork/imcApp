@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contador de Vogais</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Digite uma frase</ion-label>
+    <ion-textarea [(ngModel)]="texto" rows="3" autoGrow="true"></ion-textarea>
+  </ion-item>
+  <ion-button expand="full" class="ion-margin-top" (click)="contarVogais()">
+    Contar Vogais
+  </ion-button>
+  <div *ngIf="quantidadeVogais !== null" class="ion-margin-top">
+    <h2>Resultado:</h2>
+    <p>A frase contém <strong>{{ quantidadeVogais }}</strong> vogais</p>
+  </div>
+  
+  <!-- Botão para voltar para IMC -->
+  <ion-button 
+    expand="block" 
+    fill="outline" 
+    class="ion-margin-top"
+    routerLink="/imc">
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    Voltar para IMC
+  </ion-button>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verificador de Palíndromo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Digite uma palavra ou frase</ion-label>
+    <ion-input [(ngModel)]="texto" placeholder="Ex: Ana, ovo, Ame a ema"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="full" class="ion-margin-top" (click)="verificarPalindromo()">
+    Verificar
+  </ion-button>
+  
+  <div *ngIf="resultado !== null" class="ion-margin-top resultado-container">
+    <h2>Resultado:</h2>
+    <ion-card [color]="resultado ? 'success' : 'danger'">
+      <ion-card-content>
+        <p class="ion-text-center">{{ textoOriginal }}</p>
+        <p class="ion-text-center">
+          <strong>{{ resultado ? 'É palíndromo!' : 'Não é palíndromo!' }}</strong>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+  <!-- Botões de navegação -->
+  <ion-button expand="block" fill="outline" class="ion-margin-top" routerLink="/imc">
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    Voltar para IMC
+  </ion-button>
+  
+  <ion-button expand="block" fill="outline" class="ion-margin-top" routerLink="/tabuada">
+    <ion-icon name="calculator-outline" slot="start"></ion-icon>
+    Tabuada Interativa
+  </ion-button>
+</ion-content>

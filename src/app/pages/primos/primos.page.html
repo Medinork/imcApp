@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verificador de Números Primos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Número</ion-label>
+    <ion-input type="number" [(ngModel)]="numero"></ion-input>
+  </ion-item>
+  <ion-button expand="full" class="ion-margin-top" (click)="verificarPrimo()">
+    Verificar se é Primo
+  </ion-button>
+  <div *ngIf="resultado !== null" class="ion-margin-top">
+    <h2>Resultado:</h2>
+    <p>O número {{ numero }} <strong>{{ resultado }}</strong></p>
+  </div>
+</ion-content>

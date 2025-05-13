@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sequência de Fibonacci</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Quantidade de termos (2-50)</ion-label>
+    <ion-input type="number" [(ngModel)]="quantidadeTermos" min="2" max="50"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="full" class="ion-margin-top" (click)="gerarFibonacci()">
+    Gerar Sequência
+  </ion-button>
+  
+  <div *ngIf="sequencia.length > 0" class="ion-margin-top">
+    <h2>Sequência de Fibonacci ({{ sequencia.length }} termos):</h2>
+    <div class="sequencia-container">
+      <ion-chip *ngFor="let termo of sequencia" color="tertiary">
+        <ion-label>{{ termo }}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+  
+  <!-- Botões de navegação -->
+  <ion-button expand="block" fill="outline" class="ion-margin-top" routerLink="/imc">
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    Voltar para IMC
+  </ion-button>
+  
+  <ion-button expand="block" fill="outline" class="ion-margin-top" routerLink="/palindromo">
+    <ion-icon name="swap-horizontal-outline" slot="start"></ion-icon>
+    Verificador de Palíndromo
+  </ion-button>
+</ion-content>

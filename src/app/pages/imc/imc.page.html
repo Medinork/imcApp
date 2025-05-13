@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calculadora de IMC</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Peso (kg)</ion-label>
+    <ion-input type="number" [(ngModel)]="peso"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Altura (m)</ion-label>
+    <ion-input type="number" [(ngModel)]="altura"></ion-input>
+  </ion-item>
+  <ion-button expand="full" class="ion-margin-top" (click)="calcularIMC()">
+    Calcular IMC
+  </ion-button>
+  <div *ngIf="imc !== null" class="ion-margin-top">
+    <h2>Resultado:</h2>
+    <p>IMC: {{ imc }}</p>
+    <p>Classificação: <strong>{{ classificacao }}</strong></p>
+  </div>
+
+
+  <ion-button expand="full" class="ion-margin-top" color="secondary" routerLink="/primos">
+    <ion-icon name="calculator-outline" slot="start"></ion-icon>
+    Verificador de Números Primos
+  </ion-button>
+
+
+  <ion-button expand="full" class="ion-margin-top" color="tertiary" routerLink="/vogais">
+    <ion-icon name="text-outline" slot="start"></ion-icon>
+    Contador de Vogais
+  </ion-button>
+
+
+  <ion-button expand="full" class="ion-margin-top" color="success" routerLink="/numericas">
+    <ion-icon name="list-outline" slot="start"></ion-icon>
+    Ordenador de Números
+  </ion-button>
+
+
+  <ion-button expand="full" class="ion-margin-top" color="warning" routerLink="/tabuada">
+    <ion-icon name="calculator-outline" slot="start"></ion-icon>
+    Tabuada Interativa
+  </ion-button>
+
+
+  <ion-button expand="full" class="ion-margin-top" color="medium" routerLink="/palindromo">
+    <ion-icon name="swap-horizontal-outline" slot="start"></ion-icon>
+    Verificador de Palíndromo
+  </ion-button>
+
+
+  <ion-button expand="full" class="ion-margin-top" color="dark" routerLink="/fibonacci">
+    <ion-icon name="infinite-outline" slot="start"></ion-icon>
+    Sequência Fibonacci
+  </ion-button>
+  
+</ion-content>
